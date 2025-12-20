@@ -1,5 +1,7 @@
 package org.dretez.riichijava.model.data.tiles;
 
+import java.util.Objects;
+
 public class SuitTile extends Tile implements Comparable<SuitTile> {
     private final Suit suit;
     private final int number;
@@ -21,5 +23,22 @@ public class SuitTile extends Tile implements Comparable<SuitTile> {
         if (suit.compareTo(o.suit) != 0)
             return suit.compareTo(o.suit);
         return Integer.compare(number, o.number);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        SuitTile suitTile = (SuitTile) o;
+        return number == suitTile.number && suit == suitTile.suit;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(suit, number);
+    }
+
+    @Override
+    public String toString() {
+        return suit + "-" + number;
     }
 }

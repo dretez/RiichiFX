@@ -33,4 +33,14 @@ public class HonourTile<T extends Enum<T> & HonourEnum<T>> extends Tile implemen
         HonourTile<?> that = (HonourTile<?>) o;
         return Objects.equals(honour, that.honour);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(honour);
+    }
+
+    @Override
+    public String toString() {
+        return honour.toString();
+    }
 }
