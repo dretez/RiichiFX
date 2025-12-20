@@ -22,6 +22,16 @@ public class SuitTile extends Tile implements Comparable<SuitTile> {
         return get(suit, (number % 9) + 1);
     }
 
+    @Override
+    public Tile prev() {
+        return number == 1 ? null : get(suit, number - 1);
+    }
+
+    @Override
+    public Tile next() {
+        return number == 9 ? null : get(suit, number + 1);
+    }
+
     /* ************************************************************************************************************** */
 
     @Override

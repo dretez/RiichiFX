@@ -27,6 +27,16 @@ public class HonourTile<T extends Enum<T> & HonourEnum<T>> extends Tile implemen
         return HonourTile.get(honour.next());
     }
 
+    @Override
+    public Tile prev() {
+        return null;
+    }
+
+    @Override
+    public Tile next() {
+        return null;
+    }
+
     /* ************************************************************************************************************** */
 
     @Override
