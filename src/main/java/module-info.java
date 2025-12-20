@@ -3,6 +3,6 @@ module org.dretez.riichijava {
     requires javafx.fxml;
 
 
-    opens org.dretez.riichijava to javafx.fxml;
-    exports org.dretez.riichijava;
+    opens org.dretez.riichijava.ui to javafx.fxml;
+    exports org.dretez.riichijava.ui;
 }

@@ -1,4 +1,4 @@
-package org.dretez.riichijava;
+package org.dretez.riichijava.ui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
