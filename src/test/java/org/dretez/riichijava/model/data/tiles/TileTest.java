@@ -7,10 +7,10 @@ class TileTest {
 
     @Test
     void windDora() {
-        Tile east = new HonourTile<>(Wind.EAST);
-        Tile south = new HonourTile<>(Wind.SOUTH);
-        Tile west = new HonourTile<>(Wind.WEST);
-        Tile north = new HonourTile<>(Wind.NORTH);
+        Tile east = HonourTile.get(Wind.EAST);
+        Tile south = HonourTile.get(Wind.SOUTH);
+        Tile west = HonourTile.get(Wind.WEST);
+        Tile north = HonourTile.get(Wind.NORTH);
 
         assertEquals(east, north.getDora());
         assertEquals(south, east.getDora());
@@ -21,9 +21,9 @@ class TileTest {
 
     @Test
     void dragonDora() {
-        Tile white = new HonourTile<>(Dragon.WHITE);
-        Tile green = new HonourTile<>(Dragon.GREEN);
-        Tile red = new HonourTile<>(Dragon.RED);
+        Tile white = HonourTile.get(Dragon.WHITE);
+        Tile green = HonourTile.get(Dragon.GREEN);
+        Tile red = HonourTile.get(Dragon.RED);
 
         assertEquals(white, red.getDora());
         assertEquals(green, white.getDora());
@@ -34,16 +34,16 @@ class TileTest {
 
     @Test
     void suitDora() {
-        Tile sou1 = new SuitTile(Suit.SOUZU, 1);
-        Tile sou6 = new SuitTile(Suit.SOUZU, 6);
-        Tile sou9 = new SuitTile(Suit.SOUZU, 9);
+        Tile sou1 = SuitTile.get(Suit.SOUZU, 1);
+        Tile sou6 = SuitTile.get(Suit.SOUZU, 6);
+        Tile sou9 = SuitTile.get(Suit.SOUZU, 9);
 
-        Tile man5 = new SuitTile(Suit.MANZU, 5);
-        Tile man7 = new SuitTile(Suit.MANZU, 7);
-        Tile man8 = new SuitTile(Suit.MANZU, 8);
+        Tile man5 = SuitTile.get(Suit.MANZU, 5);
+        Tile man7 = SuitTile.get(Suit.MANZU, 7);
+        Tile man8 = SuitTile.get(Suit.MANZU, 8);
 
-        Tile pin2 = new SuitTile(Suit.PINFU, 2);
-        Tile pin3 = new SuitTile(Suit.PINFU, 3);
+        Tile pin2 = SuitTile.get(Suit.PINFU, 2);
+        Tile pin3 = SuitTile.get(Suit.PINFU, 3);
 
         assertEquals(sou1, sou9.getDora());
         assertEquals(pin3, pin2.getDora());
@@ -56,10 +56,10 @@ class TileTest {
 
     @Test
     void crossHonourDora() {
-        Tile east = new HonourTile<>(Wind.EAST);        // 1st wind
-        Tile south = new HonourTile<>(Wind.SOUTH);      // 2nd wind
-        Tile white = new HonourTile<>(Dragon.WHITE);    // 1st dragon
-        Tile red = new HonourTile<>(Dragon.RED);        // 3rd dragon
+        Tile east = HonourTile.get(Wind.EAST);        // 1st wind
+        Tile south = HonourTile.get(Wind.SOUTH);      // 2nd wind
+        Tile white = HonourTile.get(Dragon.WHITE);    // 1st dragon
+        Tile red = HonourTile.get(Dragon.RED);        // 3rd dragon
 
         assertNotEquals(south, white.getDora());
         assertNotEquals(east, red.getDora());
