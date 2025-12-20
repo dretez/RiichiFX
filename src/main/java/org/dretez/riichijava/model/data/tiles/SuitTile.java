@@ -1,5 +1,7 @@
 package org.dretez.riichijava.model.data.tiles;
 
+import org.dretez.riichijava.model.data.tiles.enums.Suit;
+
 import java.util.Objects;
 
 public class SuitTile extends Tile implements Comparable<SuitTile> {

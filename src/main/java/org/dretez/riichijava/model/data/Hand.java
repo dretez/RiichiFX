@@ -1,7 +1,7 @@
 package org.dretez.riichijava.model.data;
 
 import org.dretez.riichijava.model.data.tiles.Tile;
-import org.dretez.riichijava.model.data.tiles.TileComparator;
+import org.dretez.riichijava.model.data.tiles.comparators.TileComparator;
 
 import java.util.ArrayList;
 

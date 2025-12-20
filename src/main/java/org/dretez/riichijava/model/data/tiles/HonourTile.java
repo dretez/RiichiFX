@@ -1,5 +1,10 @@
 package org.dretez.riichijava.model.data.tiles;
 
+import org.dretez.riichijava.model.data.tiles.comparators.HonourComparator;
+import org.dretez.riichijava.model.data.tiles.enums.Dragon;
+import org.dretez.riichijava.model.data.tiles.enums.HonourEnum;
+import org.dretez.riichijava.model.data.tiles.enums.Wind;
+
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;

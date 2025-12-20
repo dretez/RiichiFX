@@ -1,4 +1,8 @@
-package org.dretez.riichijava.model.data.tiles;
+package org.dretez.riichijava.model.data.tiles.comparators;
+
+import org.dretez.riichijava.model.data.tiles.HonourTile;
+import org.dretez.riichijava.model.data.tiles.SuitTile;
+import org.dretez.riichijava.model.data.tiles.Tile;
 
 import java.util.Comparator;
 

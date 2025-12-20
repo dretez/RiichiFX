@@ -1,5 +1,8 @@
 package org.dretez.riichijava.model.data.tiles;
 
+import org.dretez.riichijava.model.data.tiles.enums.Dragon;
+import org.dretez.riichijava.model.data.tiles.enums.Suit;
+import org.dretez.riichijava.model.data.tiles.enums.Wind;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

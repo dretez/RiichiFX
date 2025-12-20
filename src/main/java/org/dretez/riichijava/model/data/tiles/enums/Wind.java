@@ -1,4 +1,4 @@
-package org.dretez.riichijava.model.data.tiles;
+package org.dretez.riichijava.model.data.tiles.enums;
 
 public enum Wind implements HonourEnum<Wind> {
     EAST,
