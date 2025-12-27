@@ -8,6 +8,7 @@ public enum Wind implements HonourEnum<Wind> {
 
     private static final Wind[] winds = values();
 
+    @Override
     public Wind next() {
         return winds[(ordinal() + 1) % winds.length];
     }

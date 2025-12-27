@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class HonourTile<T extends Enum<T> & HonourEnum<T>> extends Tile implements Comparable<HonourTile<?>> {
+public final class HonourTile<T extends Enum<T> & HonourEnum<T>> implements Tile, Comparable<HonourTile<?>> {
     private final T honour;
 
     private HonourTile(T honour) {

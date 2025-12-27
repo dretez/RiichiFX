@@ -4,7 +4,7 @@ import org.dretez.riichijava.model.data.tiles.enums.Suit;
 
 import java.util.Objects;
 
-public class SuitTile extends Tile implements Comparable<SuitTile> {
+public final class SuitTile implements Comparable<SuitTile>, Tile {
     private final Suit suit;
     private final int number;
 

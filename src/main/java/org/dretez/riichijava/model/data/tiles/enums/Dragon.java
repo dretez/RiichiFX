@@ -7,6 +7,7 @@ public enum Dragon implements HonourEnum<Dragon> {
 
     private static final Dragon[] colors = values();
 
+    @Override
     public Dragon next() {
         return colors[(ordinal() + 1) % colors.length];
     }
