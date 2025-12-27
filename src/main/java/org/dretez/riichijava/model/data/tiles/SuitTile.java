@@ -4,6 +4,12 @@ import org.dretez.riichijava.model.data.tiles.enums.Suit;
 
 import java.util.Objects;
 
+/**
+ * Represents a Suit tile in a Mahjong set.
+ * <p>
+ * A Suit tile is represented by a number ranging from 1 to 9, and by one of three Suits: Pinfu/Dots, Souzu/Sticks and
+ * Manzu/Characters.
+ */
 public final class SuitTile implements Comparable<SuitTile>, Tile {
     private final Suit suit;
     private final int number;
@@ -13,11 +19,22 @@ public final class SuitTile implements Comparable<SuitTile>, Tile {
         this.number = number;
     }
 
+    /**
+     * Factory method for {@code SuitTile}.
+     *
+     * @param suit      the {@code Suit} indicator
+     * @param number    the number indicator
+     * @return A {@code SuitTile} instance
+     * @throws IllegalArgumentException If the specified tile is outside the valid number range [1, 9]
+     * @see Suit
+     */
     public static SuitTile get(Suit suit, int number) throws IllegalArgumentException {
         if (number < 1 || number > 9)
             throw new IllegalArgumentException("Suit tiles range from 1 to 9 (inclusive), received: " + number);
         return CACHE[suit.ordinal()][number - 1];
     }
+
+    /* ************************************************************************************************************** */
 
     @Override
     public Tile getDora() {
