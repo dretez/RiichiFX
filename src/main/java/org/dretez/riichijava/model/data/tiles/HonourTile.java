@@ -17,6 +17,15 @@ public final class HonourTile<T extends Enum<T> & HonourEnum<T>> implements Tile
         this.honour = honour;
     }
 
+    /**
+     * Factory method for {@code HonourTile}
+     *
+     * @param honour The tile's indicator
+     * @param <T> Honour type (either {@code Wind} or {@code Dragon})
+     * @return A {@code HonourTile} instance
+     * @throws IllegalStateException If an unknown honour type is provided
+     * @see HonourEnum
+     */
     public static <T extends Enum<T> & HonourEnum<T>> HonourTile<T> get(T honour) throws IllegalStateException {
         @SuppressWarnings("unchecked") EnumMap<T, HonourTile<T>> map = (EnumMap<T, HonourTile<T>>) CACHE.get(honour.getDeclaringClass());
         if (map == null) throw new IllegalStateException("Unregistered honour: " + honour);
