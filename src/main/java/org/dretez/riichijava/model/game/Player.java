@@ -1,8 +1,10 @@
 package org.dretez.riichijava.model.game;
 
+import org.dretez.riichijava.model.data.Board;
 import org.dretez.riichijava.model.data.Hand;
 import org.dretez.riichijava.model.data.Meld;
 import org.dretez.riichijava.model.data.Pond;
+import org.dretez.riichijava.model.data.seat.Seat;
 import org.dretez.riichijava.model.data.tiles.Tile;
 import org.dretez.riichijava.model.data.tiles.enums.Wind;
 
@@ -12,28 +14,28 @@ import java.util.ArrayList;
  * The {@code Player} class is responsible for handling all interactions a player can directly have with the game.
  */
 public class Player {
-    private final Game game;
-    private Wind seat;
+    private final Board board;
     private final Hand hand;
-    private final Pond pond;
+    private final String name;
+    private Seat seat;
 
     /**
      * Constructor for a player with an empty hand and pond.
      *
-     * @param game The game associated to this player
-     * @param seat The player's starting seat
+     * @param board {@code Board} associated to this player
+     * @param name Player's name
      */
-    public Player(Game game, Wind seat) {
-        this.game = game;
-        this.seat = seat;
+    public Player(Board board, String name) {
+        this.board = board;
         this.hand = new Hand();
-        this.pond = new Pond();
+        this.name = name;
+        this.seat = null;
     }
 
     /* ******************************** INFO ******************************** */
 
-    public Wind seat() {
-        return seat;
+    public String name() {
+        return name;
     }
 
     public Hand hand() {
@@ -51,7 +53,7 @@ public class Player {
      * Pulls a tile from the wall into the player's hand.
      */
     public void draw() {
-        // TODO
+        hand.draw(board.draw());
     }
 
     /**
@@ -60,7 +62,7 @@ public class Player {
      * @param idx Index of the tile to be discarded
      */
     public void discard(int idx) {
-        // TODO
+        seat.discard(hand.discard(idx));
     }
 
     /**
@@ -69,7 +71,8 @@ public class Player {
      * @param tile The tile to be discarded.
      */
     public void discard(Tile tile) {
-        // TODO
+        if (hand.discard(tile))
+            seat.discard(tile);
     }
 
     /**
@@ -149,7 +152,7 @@ public class Player {
     /**
      * Advances the player to the next seat wind.
      */
-    public void switchSeat() {
-        seat = seat.next();
+    public void setSeat(Seat seat) {
+        this.seat = seat;
     }
 }
