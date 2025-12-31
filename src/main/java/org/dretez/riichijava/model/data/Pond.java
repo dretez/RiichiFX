@@ -10,4 +10,12 @@ public class Pond {
     public Pond() {
         this.tiles = new ArrayList<>();
     }
+
+    public void discard(Tile tile) {
+        tiles.addLast(tile);
+    }
+
+    public Tile steal() {
+        return tiles.getLast();
+    }
 }
