@@ -3,7 +3,7 @@ package org.dretez.riichijava.model.data.seat;
 import org.dretez.riichijava.model.data.Pond;
 import org.dretez.riichijava.model.data.tiles.Tile;
 import org.dretez.riichijava.model.data.tiles.enums.Wind;
-import org.dretez.riichijava.model.game.Player;
+import org.dretez.riichijava.model.data.player.Player;
 
 public class Seat {
     private final Wind wind;
