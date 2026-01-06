@@ -3,23 +3,29 @@ package org.dretez.riichijava.model.data.player.meld;
 import org.dretez.riichijava.model.data.tiles.Tile;
 import org.dretez.riichijava.model.data.tiles.enums.Wind;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class Meld {
+public abstract class Meld {
     private final boolean open;
-    private final ArrayList<Tile> tiles;
+    private final List<Tile> tiles;
+    private final Wind blame;
 
-    public Meld(boolean open, ArrayList<Tile> tiles) {
-        this.open = open;
+    public Meld(List<Tile> tiles, Wind blame) {
+        this.open = true;
         this.tiles = tiles;
-    }
-
-    public Meld(ArrayList<Tile> tiles) {
-        this(false, tiles);
+        this.blame = blame;
     }
 
     public boolean isOpen() {
         return open;
+    }
+
+    public List<Tile> tiles() {
+        return tiles;
+    }
+
+    public Wind blame() {
+        return blame;
     }
 
     @Override
