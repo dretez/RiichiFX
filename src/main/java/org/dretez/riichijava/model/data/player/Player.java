@@ -4,6 +4,8 @@ import org.dretez.riichijava.model.data.game.Board;
 import org.dretez.riichijava.model.data.player.meld.Meld;
 import org.dretez.riichijava.model.data.seat.Seat;
 import org.dretez.riichijava.model.data.tiles.Tile;
+import org.dretez.riichijava.model.data.tiles.enums.Wind;
+import org.dretez.riichijava.model.exceptions.IllegalTileCallException;
 
 import java.util.ArrayList;
 
@@ -74,23 +76,24 @@ public class Player {
 
     /**
      * Steals the last discarded tile to form an open sequence.
+     *
+     * @param stolen The tile that will form the quad
+     * @param tile1 A tile already owned by the player which will form a sequence with the stolen tile
+     * @param tile2 A tile already owned by the player which will form a sequence with the stolen tile
+     * @param blame The {@code Wind} of the seat from which a tile is being stolen
      */
-    public void chi() {
-        // TODO
+    public void chi(Tile stolen, Tile tile1, Tile tile2, Wind blame) throws IllegalTileCallException {
+        hand.chi(stolen, tile1, tile2, blame);
     }
 
     /**
      * Steals the last discarded tile to form an open triplet.
+     *
+     * @param stolen The tile that will form the quad
+     * @param blame The {@code Wind} of the seat from which a tile is being stolen
      */
-    public void pon() {
-        // TODO
-    }
-
-    /**
-     * Declares a quad meld, draws one tile from the dead wall and reveals a new dora indicator.
-     */
-    public void kan() {
-        // TODO
+    public void pon(Tile stolen, Wind blame) throws IllegalTileCallException {
+        hand.pon(stolen, blame);
     }
 
     /**
@@ -98,15 +101,18 @@ public class Player {
      *
      * @param tile The tile that will form the quad
      */
-    private void ankan(Tile tile) {
-        // TODO
+    private void ankan(Tile tile) throws IllegalTileCallException {
+        hand.ankan(tile);
     }
 
     /**
      * Steals the last discarded tile to form an open quad.
+     *
+     * @param stolen The tile that will form the quad
+     * @param blame The {@code Wind} of the seat from which a tile is being stolen
      */
-    private void daiminkan() {
-        // TODO
+    private void daiminkan(Tile stolen, Wind blame) throws IllegalTileCallException {
+        hand.daiminkan(stolen, blame);
     }
 
     /**
@@ -114,8 +120,8 @@ public class Player {
      *
      * @param tile The tile that will form the quad
      */
-    private  void shouminkan(Tile tile) {
-        // TODO
+    private  void shouminkan(Tile tile) throws IllegalTileCallException {
+        hand.shouminkan(tile);
     }
 
     /**
