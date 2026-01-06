@@ -1,8 +1,7 @@
 package org.dretez.riichijava.model.data.player;
 
-import org.dretez.riichijava.model.data.Board;
-import org.dretez.riichijava.model.data.Hand;
-import org.dretez.riichijava.model.data.Meld;
+import org.dretez.riichijava.model.data.game.Board;
+import org.dretez.riichijava.model.data.player.meld.Meld;
 import org.dretez.riichijava.model.data.seat.Seat;
 import org.dretez.riichijava.model.data.tiles.Tile;
 

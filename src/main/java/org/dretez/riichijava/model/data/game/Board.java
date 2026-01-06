@@ -1,4 +1,4 @@
-package org.dretez.riichijava.model.data;
+package org.dretez.riichijava.model.data.game;
 
 import org.dretez.riichijava.model.data.tiles.Tile;
 import org.dretez.riichijava.model.data.tiles.enums.Wind;

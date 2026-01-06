@@ -7,6 +7,14 @@ import org.dretez.riichijava.model.data.tiles.Tile;
 import java.util.Comparator;
 
 public class TileComparator implements Comparator<Tile> {
+    private static final TileComparator instance = new TileComparator();
+
+    private TileComparator() {}
+
+    public static TileComparator get() {
+        return instance;
+    }
+
     @Override
     public int compare(Tile o1, Tile o2) {
         if (o1 instanceof SuitTile && o2 instanceof HonourTile<?>) return -1;
