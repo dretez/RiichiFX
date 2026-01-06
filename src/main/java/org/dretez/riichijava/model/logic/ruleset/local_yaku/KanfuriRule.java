@@ -1,0 +1,10 @@
+package org.dretez.riichijava.model.logic.ruleset.local_yaku;
+
+/**
+ * Scored for winning off an opponent's discarded tile after they called kan.
+ */
+public enum KanfuriRule {
+    DISALLOW,
+    REPLACE_CHANKAN,
+    ALLOW
+}
