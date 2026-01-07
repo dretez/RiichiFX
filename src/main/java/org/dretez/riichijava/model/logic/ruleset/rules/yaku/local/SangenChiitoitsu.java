@@ -1,4 +1,4 @@
-package org.dretez.riichijava.model.logic.ruleset.local_yaku;
+package org.dretez.riichijava.model.logic.ruleset.rules.yaku.local;
 
 /**
  * A Chiitoitsu hand (seven pairs) containing pairs of all 3 dragons.

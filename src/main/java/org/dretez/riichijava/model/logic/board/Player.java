@@ -11,22 +11,21 @@ import java.util.ArrayList;
  * The {@code Player} class is responsible for handling all interactions a player can directly have with the game.
  */
 public class Player {
-    private final Board board;
-    private final Hand hand;
     private final String name;
-    private Seat seat;
+    private final Wind seat;
+    private final Hand hand;
+    private final int points;
 
     /**
-     * Constructor for a player with an empty hand and pond.
+     * Constructor for a player with an empty hand.
      *
-     * @param board {@code Board} associated to this player
      * @param name Player's name
      */
-    public Player(Board board, String name) {
-        this.board = board;
-        this.hand = new Hand();
+    public Player(Wind seat, String name, int points) {
+        this.seat = seat;
         this.name = name;
-        this.seat = null;
+        this.points = points;
+        this.hand = new Hand();
     }
 
     /* ******************************** INFO ******************************** */
@@ -44,22 +43,33 @@ public class Player {
         return null;
     }
 
+    public int points() {
+        return points;
+    }
+
+    public Wind seat() {
+        return seat;
+    }
+
     /* ******************************* MOVES ******************************* */
 
     /**
-     * Pulls a tile from the wall into the player's hand.
+     * Adds a {@code Tile} to the player's hand.
+     *
+     * @param tile {@code Tile} to be drawn
      */
-    public void draw() {
-        hand.draw(board.draw());
+    public void draw(Tile tile) {
+        hand.draw(tile);
     }
 
     /**
-     * Discards a tile from the player's hand into the player's pond.
+     * Discards a {@code Tile} from the player's {@code Hand}.
      *
-     * @param idx Index of the tile to be discarded
+     * @param idx Index of the {@code Tile} to be discarded
+     * @return The discarded {@code Tile}
      */
-    public void discard(int idx) {
-        seat.discard(hand.discard(idx));
+    public Tile discard(int idx) {
+        return hand.discard(idx);
     }
 
     /**
@@ -67,9 +77,8 @@ public class Player {
      *
      * @param tile The tile to be discarded.
      */
-    public void discard(Tile tile) {
-        if (hand.discard(tile))
-            seat.discard(tile);
+    public Tile discard(Tile tile) {
+        return hand.discard(tile) ? tile : null;
     }
 
     /**
@@ -146,14 +155,5 @@ public class Player {
      */
     public void tsumo() {
         // TODO
-    }
-
-    /* ******************************** GAME ******************************** */
-
-    /**
-     * Advances the player to the next seat wind.
-     */
-    public void setSeat(Seat seat) {
-        this.seat = seat;
     }
 }

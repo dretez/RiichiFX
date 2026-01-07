@@ -1,4 +1,4 @@
-package org.dretez.riichijava.model.logic.ruleset.local_yaku;
+package org.dretez.riichijava.model.logic.ruleset.rules.yaku.local;
 
 /**
  * A hand that only consists of tiles that look the same when turned upside down. That means haku/white dragon, all

@@ -8,18 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
-    private final List<Player> players;
     private final List<Seat> seats;
     private final Wall wall;
-    private Wind roundWind;
+    private final Wind roundWind;
+    private final int roundNumber;
+    private final int honba;
     private Wind currentSeat;
 
-    public Board() {
-        wall = new Wall();
-        roundWind = Wind.EAST;
-        currentSeat = Wind.EAST;
-        players = new ArrayList<>(4);
-        seats = new ArrayList<>(4);
+    public Board(Wind round, int number, int honba) {
+        this.roundWind = round;
+        this.roundNumber = number;
+        this.honba = honba;
+
+        this.wall = new Wall();
+        this.currentSeat = Wind.EAST;
+        this.seats = new ArrayList<>(4);
         for (Wind wind : Wind.values())
             seats.add(new Seat(wind));
     }
@@ -30,6 +33,14 @@ public class Board {
         return roundWind;
     }
 
+    public int getRoundNumber() {
+        return roundNumber;
+    }
+
+    public int getHonba() {
+        return honba;
+    }
+
     public Wind getCurrentSeat() {
         return currentSeat;
     }
@@ -38,24 +49,14 @@ public class Board {
         return null;
     }
 
+    public boolean isRenchan() {
+        // TODO
+        return false;
+    }
+
     /* ********************************************************************** */
-
-    public void nextRound() {
-        roundWind = roundWind.next();
-    }
-
-    public void passTurn() {
-        currentSeat = currentSeat.next();
-    }
 
     public Tile draw() {
         return wall.getLiveWall().draw();
-    }
-
-    public void rotatePlayers() {
-        players.addFirst(players.removeLast());
-        for (int i = 0; i < players.size(); i++) {
-            seats.get(i).setPlayer(players.get(i));
-        }
     }
 }

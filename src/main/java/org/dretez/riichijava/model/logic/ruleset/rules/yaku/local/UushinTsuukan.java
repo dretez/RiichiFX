@@ -1,4 +1,4 @@
-package org.dretez.riichijava.model.logic.ruleset.local_yaku;
+package org.dretez.riichijava.model.logic.ruleset.rules.yaku.local;
 
 /**
  * An Ittsu hand with a kanchan (middle sequence wait) for a 5 on the straight suit.

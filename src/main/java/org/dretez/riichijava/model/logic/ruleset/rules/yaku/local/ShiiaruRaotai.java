@@ -1,4 +1,4 @@
-package org.dretez.riichijava.model.logic.ruleset.local_yaku;
+package org.dretez.riichijava.model.logic.ruleset.rules.yaku.local;
 
 /**
  * A hand with 4 called melds with a single wait for a pair.
