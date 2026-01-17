@@ -1,17 +1,25 @@
 package org.dretez.riichijava.model.logic.game;
 
+import org.dretez.riichijava.model.logic.ruleset.RuleSet;
+import org.dretez.riichijava.model.logic.ruleset.StandardRuleSet;
 import org.dretez.riichijava.model.data.common.Wind;
 import org.dretez.riichijava.model.data.tile.Tile;
 
 public class Game {
+    private final RuleSet rules;
     private GameState state;
 
     public Game() {
         this.state = new GameSetupState(this);
+        this.rules = new StandardRuleSet();
     }
 
     void setState(GameState state) {
         this.state = state;
+    }
+
+    RuleSet rules() {
+        return rules;
     }
 
     /* ********************************************************************** */
