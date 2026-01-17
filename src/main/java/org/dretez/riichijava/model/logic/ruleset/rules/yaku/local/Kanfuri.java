@@ -7,19 +7,25 @@ import org.dretez.riichijava.model.logic.ruleset.rules.yaku.Yaku;
 /**
  * Scored for winning off an opponent's discarded tile after they called kan.
  */
-public class KanfuriRule implements Yaku {
+public class Kanfuri implements Yaku {
     @Override
     public boolean isYakuman() {
         return false;
     }
 
     @Override
-    public boolean matches(Hand hand, WinContext context) {
+    public boolean isDoubleYakuman() {
         return false;
     }
 
     @Override
-    public int han(WinContext context) {
+    public boolean matches(Hand hand, WinContext ctx) {
+        // TODO
+        return false;
+    }
+
+    @Override
+    public int han(WinContext ctx) {
         return 1;
     }
 }
