@@ -4,7 +4,7 @@ import org.dretez.riichijava.model.exceptions.NotEnoughPlayersException;
 import org.dretez.riichijava.model.exceptions.PlayerAlreadyExistsException;
 import org.dretez.riichijava.model.exceptions.TooManyPlayersException;
 import org.dretez.riichijava.model.logic.board.Player;
-import org.dretez.riichijava.model.logic.common.Wind;
+import org.dretez.riichijava.model.data.common.Wind;
 
 import java.util.*;
 

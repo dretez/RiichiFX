@@ -1,6 +1,6 @@
 package org.dretez.riichijava.model.logic.board.meld;
 
-import org.dretez.riichijava.model.logic.tile.Tile;
+import org.dretez.riichijava.model.data.tile.Tile;
 
 import java.util.Collections;
 

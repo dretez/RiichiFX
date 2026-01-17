@@ -1,7 +1,8 @@
 package org.dretez.riichijava.model.logic.board;
 
-import org.dretez.riichijava.model.logic.tile.Tile;
-import org.dretez.riichijava.model.logic.common.Wind;
+import org.dretez.riichijava.model.data.tile.Tile;
+import org.dretez.riichijava.model.data.common.Wind;
+import org.dretez.riichijava.model.logic.common.WindOrder;
 
 public class Seat {
     private final Wind wind;
@@ -23,15 +24,15 @@ public class Seat {
     }
 
     public Wind shimocha() {
-        return wind.next();
+        return WindOrder.next(wind);
     }
 
     public Wind toimen() {
-        return wind.next().next();
+        return WindOrder.next(WindOrder.next(wind));
     }
 
     public Wind kamicha() {
-        return wind.next().next().next();
+        return WindOrder.prev(wind);
     }
 
     /* ********************************************************************** */

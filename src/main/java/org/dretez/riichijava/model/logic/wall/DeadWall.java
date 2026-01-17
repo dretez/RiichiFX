@@ -1,6 +1,6 @@
 package org.dretez.riichijava.model.logic.wall;
 
-import org.dretez.riichijava.model.logic.tile.Tile;
+import org.dretez.riichijava.model.data.tile.Tile;
 import org.dretez.riichijava.model.exceptions.NoMoreDoraException;
 
 import java.util.Collections;

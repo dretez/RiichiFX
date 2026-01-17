@@ -1,13 +1,13 @@
 package org.dretez.riichijava.model.logic.board;
 
+import org.dretez.riichijava.model.data.tile.Tile;
+import org.dretez.riichijava.model.data.common.Wind;
+import org.dretez.riichijava.model.exceptions.IllegalTileCallException;
 import org.dretez.riichijava.model.logic.board.meld.Kantsu;
 import org.dretez.riichijava.model.logic.board.meld.Koutsu;
 import org.dretez.riichijava.model.logic.board.meld.Meld;
 import org.dretez.riichijava.model.logic.board.meld.Shuntsu;
-import org.dretez.riichijava.model.logic.tile.Tile;
-import org.dretez.riichijava.model.logic.tile.TileComparator;
-import org.dretez.riichijava.model.logic.common.Wind;
-import org.dretez.riichijava.model.exceptions.IllegalTileCallException;
+import org.dretez.riichijava.model.logic.tile.TileOrder;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,7 +42,7 @@ public class Hand {
 
     public int shanten() {
         List<Tile> tilesCopy = new ArrayList<>(tiles);
-        tilesCopy.sort(TileComparator.get());
+        tilesCopy.sort(TileOrder.instance());
         // TODO
         return 0;
     }
@@ -55,6 +55,10 @@ public class Hand {
 
     public Tile discard(int idx) {
         return tiles.remove(idx);
+    }
+
+    public Tile discard(Tile tile) {
+        return tiles.remove(tile) ? tile : null;
     }
 
     public void chi(Tile stolen, Tile tile1, Tile tile2, Wind blame) throws IllegalTileCallException {
@@ -102,11 +106,7 @@ public class Hand {
         open = true;
     }
 
-    public boolean discard(Tile tile) {
-        return tiles.remove(tile);
-    }
-
     public void sort() {
-        tiles.sort(TileComparator.get());
+        tiles.sort(TileOrder.instance());
     }
 }

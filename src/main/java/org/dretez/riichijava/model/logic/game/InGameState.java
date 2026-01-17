@@ -3,8 +3,8 @@ package org.dretez.riichijava.model.logic.game;
 import org.dretez.riichijava.model.exceptions.IllegalPlayerActionException;
 import org.dretez.riichijava.model.logic.board.Board;
 import org.dretez.riichijava.model.logic.board.Player;
-import org.dretez.riichijava.model.logic.common.Wind;
-import org.dretez.riichijava.model.logic.tile.Tile;
+import org.dretez.riichijava.model.data.common.Wind;
+import org.dretez.riichijava.model.data.tile.Tile;
 
 import java.util.LinkedList;
 import java.util.List;

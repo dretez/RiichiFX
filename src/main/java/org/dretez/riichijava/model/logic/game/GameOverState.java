@@ -2,7 +2,8 @@ package org.dretez.riichijava.model.logic.game;
 
 import org.dretez.riichijava.model.logic.board.Board;
 import org.dretez.riichijava.model.logic.board.Player;
-import org.dretez.riichijava.model.logic.common.Wind;
+import org.dretez.riichijava.model.data.common.Wind;
+import org.dretez.riichijava.model.logic.common.WindOrder;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -22,7 +23,9 @@ public class GameOverState extends GameState {
         this.updatedPoints = players.stream().map(Player::points).toList(); // TODO calculate new points
 
         this.nextRoundNumber = board.isRenchan() ? board.getRoundNumber() : board.getRoundNumber() % players.size() + 1;
-        this.nextRoundWind = nextRoundNumber == 1 && !board.isRenchan() ? board.getRoundWind().next() : board.getRoundWind();
+        this.nextRoundWind = nextRoundNumber == 1 && !board.isRenchan() ?
+                WindOrder.next(board.getRoundWind()) :
+                board.getRoundWind();
         this.nextRoundHonba = board.isRenchan() ? board.getHonba() + 1 : 0;
     }
 

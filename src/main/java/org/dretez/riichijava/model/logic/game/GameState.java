@@ -4,8 +4,8 @@ import org.dretez.riichijava.model.exceptions.IllegalPlayerActionException;
 import org.dretez.riichijava.model.exceptions.NotEnoughPlayersException;
 import org.dretez.riichijava.model.exceptions.PlayerAlreadyExistsException;
 import org.dretez.riichijava.model.exceptions.TooManyPlayersException;
-import org.dretez.riichijava.model.logic.common.Wind;
-import org.dretez.riichijava.model.logic.tile.Tile;
+import org.dretez.riichijava.model.data.common.Wind;
+import org.dretez.riichijava.model.data.tile.Tile;
 
 public abstract class GameState {
     protected final Game game;

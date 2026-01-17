@@ -1,7 +1,7 @@
 package org.dretez.riichijava.model.logic.board.meld;
 
-import org.dretez.riichijava.model.logic.tile.Tile;
-import org.dretez.riichijava.model.logic.common.Wind;
+import org.dretez.riichijava.model.data.tile.Tile;
+import org.dretez.riichijava.model.data.common.Wind;
 
 import java.util.Collections;
 

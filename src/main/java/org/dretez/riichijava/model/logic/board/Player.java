@@ -1,8 +1,8 @@
 package org.dretez.riichijava.model.logic.board;
 
+import org.dretez.riichijava.model.data.tile.Tile;
+import org.dretez.riichijava.model.data.common.Wind;
 import org.dretez.riichijava.model.logic.board.meld.Meld;
-import org.dretez.riichijava.model.logic.tile.Tile;
-import org.dretez.riichijava.model.logic.common.Wind;
 import org.dretez.riichijava.model.exceptions.IllegalTileCallException;
 
 import java.util.ArrayList;
@@ -78,7 +78,7 @@ public class Player {
      * @param tile The tile to be discarded.
      */
     public Tile discard(Tile tile) {
-        return hand.discard(tile) ? tile : null;
+        return hand.discard(tile);
     }
 
     /**
